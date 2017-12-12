@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+    <head>        
+        <meta charset="utf-8"/>
+        <link rel="icon" type="image/png" href="/img/favicon.ico">
+        <title>SmartPool Systems</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Animation library for notifications -->
+        <link href="/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+        <!-- Fonts and icons -->
+        <link href="/css/font-awesome.css" rel="stylesheet"/>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'/>
+        <link href="/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="sidebar" data-color="azure" data-image="">
+                <div class="sidebar-wrapper">
+                    <div class="logo">
+                        <a href="#" class="simple-text">
+                            SmartPool Systems
+                        </a>
+                    </div>
+
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="#">
+                                <i class="pe-7s-tools"></i>
+                                <p>Services</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-background" style="background-image: url(/img/pool.jpg)"></div>
+            </div>
+
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Centre de contrôle</a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <p id="connected" class="navbar-text text-warning">Non connecté au serveur.</p>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="content">
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="header">
+                                    <h4 class="title"><i class="pe-7s-drop"></i> La température de l'eau est de :</h4>
+                                    <center>
+                                        <h1 id="waterTemp"></h1>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="header">
+                                    <h4 class="title"><i class="pe-7s-photo"></i> Il fait :</h4>
+                                    <center>
+                                        <h1><i id="period" class=""></i></h1>
+                                        <p id="periodText" class="category"></p>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="header">
+                                    <h4 class="title"><i class="pe-7s-info"></i> Le temps est :</h4>
+                                    <center>
+                                        <h1><i id="weather" class=""></i></h1>
+                                        <p id="weatherText" class="category"></p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title"><i class="pe-7s-map"></i> Contrôle de la bâche</h4>
+                                        <p class="category">La protection est :</p>
+                                    </div>
+                                    <div class="content">
+                                        <div id="coverInfo" class="text-center alert alert-success">
+                                            <span></span>
+                                        </div>
+                                        <div class="footer text-center">
+                                            <hr>
+                                            <button type="button" class="btn btn-wd btn-info" id="coverButton">
+                                                <span class="btn-label"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title"><i class="pe-7s-repeat"></i> Contrôle de la filtration</h4>
+                                        <p class="category">La filtration est :</p>
+                                    </div>
+                                    <div class="content">
+                                        <div id="filtrateInfo" class="text-center alert alert-success">
+                                            <span></span>
+                                        </div>
+                                        <div class="footer text-center">
+                                            <hr>
+                                            <button type="button" class="btn btn-wd btn-info" id="filtrateButton">
+                                                <span class="btn-label"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title"><i class="pe-7s-paint-bucket"></i> Contrôle du niveau d'eau</h4>
+                                        <p class="category">Le niveau est :</p>
+                                    </div>
+                                    <div class="content">
+                                        <div id="waterLevelInfo" class="text-center alert alert-success">
+                                            <span></span>
+                                        </div>
+                                        <div class="footer text-center">
+                                            <hr>
+                                            <button type="button" class="btn btn-wd btn-info" id="waterLevelButton">
+                                                <span class="btn-label"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title"><i class="pe-7s-server"></i> Distribution du chlore</h4>
+                                        <p class="category">Le dosage est :</p>
+                                    </div>
+                                    <div class="content text-center">
+                                        <div id="chloreInfo" class="text-center alert alert-success">
+                                            <span></span>
+                                        </div>
+                                        <div class="footer text-center">
+                                            <hr>
+                                            <button type="button" class="btn btn-wd btn-info" id="chloreButton">
+                                                <span class="btn-label">Ajuster</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <p class="copyright pull-right">
+                            &copy; 2017 <a href="https://www.facebook.com/Quentin.Camboulives">Camboulives Quentin</a>, made with love for Epitech.
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+        <script src="/js/jquery-1.10.2.js"></script>
+        <!-- Adresse ip du serveur transmis à socket IO par le biais de EJS -->
+        <script>var ip = "<%= ip %>";</script>
+        <script src="/js/smart-pool-socketIO.js"></script>
+    </body>
+</html>
